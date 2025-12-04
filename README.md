@@ -1,24 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Banking Portal - Portfolio Management System
+
+A specialized banking interface built with Next.js, featuring portfolio management, transaction tracking, and Supabase integration. The interface includes modern ecommerce-themed UI with smooth hover effects and animations.
+
+## Features
+
+- 🏦 **Banking Dashboard** - Overview of total balance and account summary
+- 💼 **Portfolio Management** - Track multiple asset types (Bank Accounts, Stocks, Cryptocurrency)
+- 📊 **Transaction History** - View recent transactions with credit/debit indicators
+- 🎨 **Ecommerce Theme** - Modern UI with gradient effects and smooth animations
+- ✨ **Hover Effects** - Interactive elements with CSS transitions
+- 🔌 **Supabase Integration** - Ready for database_portfolio table connection
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- A Supabase account (optional - app works with mock data if not configured)
+
+### Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Set up Supabase (Optional):
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Supabase Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To connect to your Supabase database:
+
+1. Create a table named `database_portfolio` in your Supabase project
+2. Add the following columns:
+   - `id` (uuid, primary key)
+   - `asset_name` (text)
+   - `asset_type` (text)
+   - `quantity` (numeric)
+   - `value` (numeric)
+   - `change_percent` (numeric)
+   - `created_at` (timestamp)
+
+3. Update `app/page.tsx` to use real Supabase queries:
+   ```typescript
+   const { data, error } = await supabase.from('database_portfolio').select('*')
+   ```
+
+Currently, the app uses mock data for demonstration purposes.
 
 ## Learn More
 
