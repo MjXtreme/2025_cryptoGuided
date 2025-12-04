@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Banking Portal - Portfolio Management",
-  description: "Specialized banking interface with portfolio management and transaction tracking",
+  title: "John Portfolio - Full Stack Developer",
+  description: "Portfolio website featuring pixel-art design, modern web development projects, and specialized hover effects",
 };
 
 export default function RootLayout({
