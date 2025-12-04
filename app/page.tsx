@@ -97,14 +97,14 @@ export default function BankingDashboard() {
           <div className="balance-card">
             <div className="flex justify-between items-start mb-4">
               <div>
-                <p className="text-white-600 text-sm mb-1">Total Balance</p>
+                <p className="text-white text-sm mb-1">Total Balance</p>
                 <h2 className="text-4xl font-bold text-gray-900">
                   ${totalBalance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </h2>
               </div>
               <div className="text-right">
                 <p className="text-green-600 text-sm font-semibold">+2.4%</p>
-                <p className="text-white-500 text-xs">This month</p>
+                <p className="text-white text-xs">This month</p>
               </div>
             </div>
             <div className="flex space-x-4 mt-6">
